@@ -12,3 +12,5 @@ Ao baixar, deve-se substituir a seguinte linha de código na classe Driver.java 
 System.setProperty("webdriver.chrome.driver", "/home/naira/drivers/chromedriver_linux64/chromedriver");
 
 Para clonar o projeto para sua máquina basta executar o comando: git clone https://github.com/nairabrito/automacao-web-selenium-cucumber-pageobjects-java.git no seu terminal.
+
+https://github.com/nairabrito/automacao-web-selenium-cucumber-pageobjects-java/issues/1

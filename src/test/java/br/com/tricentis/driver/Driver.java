@@ -1,6 +1,8 @@
 package br.com.tricentis.driver;
 
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +18,7 @@ public class Driver {
 		System.setProperty("webdriver.chrome.driver", "/home/naira/drivers/chromedriver_linux64/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 
 	}

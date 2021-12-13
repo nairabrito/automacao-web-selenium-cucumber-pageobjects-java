@@ -2,6 +2,7 @@ package br.com.tricentis.paginas;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -202,12 +203,12 @@ public class AutomovelPage {
 		return this;
 	}
 
-	public AutomovelPage nextPriceOption() {
+	public AutomovelPage nextPriceOption() {                  
 		
 		WebElement nextPriceOption = espera.until(ExpectedConditions
-				.presenceOfElementLocated(By.xpath("//*[@id='nextsendquote']")));
+				.presenceOfElementLocated(By.xpath("//button[@id='nextsendquote']")));
 		nextPriceOption.click();
-		//driver.findElement(By.xpath("//*[@id='nextsendquote']")).click();
+		
 		return this;
 	}
 

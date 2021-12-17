@@ -1,6 +1,7 @@
 package br.com.tricentis.modulos;
 
 import org.junit.Assert;
+
 import br.com.tricentis.paginas.AutomovelPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -69,6 +70,10 @@ public class AutomovelTest extends AutomovelPage {
 		
 		boolean exibirMensagemSucesso = automovelPage.verificarMensagemSucesso();
 		Assert.assertTrue("Mensagem de sucesso", exibirMensagemSucesso);
+		
+		alertFinish();
+		
 	}
+	
 	
 }

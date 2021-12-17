@@ -2,7 +2,6 @@ package br.com.tricentis.paginas;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +11,7 @@ import br.com.tricentis.driver.Driver;
 
 public class AutomovelPage {
 
-	WebDriverWait espera = new WebDriverWait(driver, Duration.ofSeconds(3000));
+	WebDriverWait espera = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	static WebDriver driver = Driver.getDriver();
 
@@ -20,14 +19,10 @@ public class AutomovelPage {
 		driver.get(url);
 
 	}
-	
-	public WebDriver retornaDriver() {
-		return driver;
-	}
 
 	public AutomovelPage verificarObjetoSelecionado() {
 		WebElement objetoSelecionado = espera
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"nav_automobile\"]")));
+				.until(ExpectedConditions.presenceOfElementLocated(By.id("nav_automobile")));
 		objetoSelecionado.click();
 		return this;
 
@@ -103,9 +98,10 @@ public class AutomovelPage {
 
 	public AutomovelPage informarGender() {
 		WebElement radioGender = espera.until(ExpectedConditions
-				.presenceOfElementLocated(By.xpath("//*[@id=\"insurance-form\"]/div/section[2]/div[4]/p/label[1]")));
+				.presenceOfElementLocated(By.xpath("//*[@class='ideal-radiocheck-label' and text()='Female' ]")));
 		radioGender.click();
 		return this;
+
 	}
 
 	public AutomovelPage informarStreetAddress(String streetAddress) {
@@ -137,7 +133,7 @@ public class AutomovelPage {
 
 	public AutomovelPage informarHobbies() {
 		WebElement radioHobbies = espera.until(ExpectedConditions
-				.presenceOfElementLocated(By.xpath("//*[@id=\"insurance-form\"]/div/section[2]/div[10]/p/label[2]")));
+				.presenceOfElementLocated(By.xpath("//*[@class='ideal-radiocheck-label' and text()=' Other' ]")));
 		radioHobbies.click();
 		return this;
 	}
@@ -177,7 +173,7 @@ public class AutomovelPage {
 
 	public AutomovelPage informarOptionalProducts() {
 		WebElement radioProducts = espera.until(ExpectedConditions
-				.presenceOfElementLocated(By.xpath("//*[@id=\"insurance-form\"]/div/section[3]/div[5]/p/label[2]")));
+				.presenceOfElementLocated(By.xpath("//*[@class='ideal-radiocheck-label' and text()='Legal Defense Insurance' ]")));
 		radioProducts.click();
 		return this;
 	}
@@ -241,16 +237,20 @@ public class AutomovelPage {
 
 	public boolean verificarMensagemSucesso() {
 
-		String textMessage = espera.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[4]/h2")))
+		String textMessage = espera.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(), 'Sending e-mail success!')]")))
 				.getText();
 
-		System.out.println("Mensagem apresentada:" + textMessage);
 		if (textMessage.contains("Sending e-mail success!")) {
 			return true;
 		} else {
 			return false;
 		}
 
+	}
+	
+	public void alertFinish() {
+		driver.findElement(By.xpath("//*[@class='confirm']")).click();
+		driver.quit();
 	}
 
 }

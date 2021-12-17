@@ -4,7 +4,7 @@ Selenium WebDriver + Cucumber JVM + Page Object Pattern
 
 Pequeno projeto de testes funcionais utilizando Selenium WebDriver com Cucumber JVM (BDD) e o padrão Page Object.
 
-Para executar os testes é preciso certificar-se de ter instalado o Maven e o driver do Google Chrome.
+Para executar os testes é preciso certificar-se de ter baixado o chromedriver na sua máquina.
 
 Deve-se verificar qual a versão do seu navegador chrome e baixar a versão do chrome driver.
 

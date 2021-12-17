@@ -12,7 +12,7 @@ Segue o link para baixar o chrome driver: https://chromedriver.chromium.org/down
 
 Ao baixar, deve-se substituir a seguinte linha de código na classe Driver.java com o endereço da pasta do driver que você baixou na sua máquina.
 
-System.setProperty("webdriver.chrome.driver", "/home/naira/drivers/chromedriver_linux64/chromedriver");
+System.setProperty("webdriver.chrome.driver", "/home/naira/Drivers/chromedriver");
 
 Para clonar o projeto para sua máquina basta executar o comando: 
 
